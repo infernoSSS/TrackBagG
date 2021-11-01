@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="/login.css"/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+
+<body>
+  <header>
+    <img src="resources./kurs_logo.png" alt="err">
+  </header>
+  <main>
+    <form class="login_box" action="login" method="post">
+      <h1 id="title">Login</h1>
+      <h6 id="massage_m" style="color: #f8981c">${massage}</h6>
+      <input type="text" class="input_text" name="login" id="login" value="${username}" maxlength="8"/>
+      <input type="password" class="input_text" name="password" id="password" value="${password}" maxlength="8"/>
+      <input type="submit" name="" value="login" id="login_button"/>
+    </form>
+  </main>
+  <footer>
+    <a href="https://github.com/">
+      <img id="git_logo" src="resources./github.png" width="50" height="50"/>
+    </a>
+  </footer>
+</body>
+
+</html>

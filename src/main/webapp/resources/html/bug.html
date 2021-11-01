@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="resources./bug_style.css"/>
+  <link rel="stylesheet" href="resources./headStyle.css"/>
+  <link rel="stylesheet" href="resources./styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="header_container">
+      <div class="head">
+        <a href="#">
+          <img id="logo" src="resources./kurs_logo.png" width="185" height="50"/>
+        </a>
+        <div id="login_info">
+          login as ${username}
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="bug_box">
+      <div class="bug_status"> <!--open/closed & if(closed):bug/ficha-->
+        Bug-${bug_number} ${bug_status}
+      </div>
+      <form class="problem_and_solution_box" id="bug_form" name="bug_form" action="bug" method="post">
+        <input type="hidden" name="post_action" value="bug">
+        <input type="hidden" name="bug_id" value="${bug_id}">
+        <input type="hidden" name="uuid" value="${uuid}">
+        <div id="report" class="bug_fields">
+            <span class="ne_pridumal">Date:</span>
+            <span class="bug_field">${report_date}</span>
+            <span class="ne_pridumal">Reported by:</span>
+            <span class="bug_field">${reported_by}</span>
+          <textarea class="bug_field" id="bug_description" name="description"
+           rows="8" cols="80" placeholder="description">${description}</textarea>
+        </div>
+      </form>
+    </div>
+    <form class="my_solution_box" action="#" method="post">
+      <input type="hidden" name="username" value="${username}">
+      <input type="hidden" name="bug_id" value="${bug_id}">
+      <textarea class="my_solution" name="name" rows="4" cols="60" placeholder="my solution"></textarea>
+      <div class="bug_or_ficha">
+        <div class="">
+          <input type="radio" name="bug_or_ficha" value="bug" checked>
+          <label>Bug</label>
+        </div>
+        <div class="">
+          <input type="radio" name="bug_or_ficha" value="ficha">
+          <label>Ficha</label>
+        </div>
+      </div>
+      <button class="send_button" type="submit" name="button"></button>
+    </form>
+    <div class="solutions_box">
+      ${answers}
+    </div>
+  </main>
+  <aside>
+    <input class="bug_button" ${bug_post_hidden} id="post" title="post" type="submit" name="button" value="post" form="bug_form">
+    <input class="bug_button" ${bug_edit_hidden} id="edit" title="edit" type="submit" name="button" value="edit" form="bug_form">
+    <input class="bug_button" ${bug_delete_hidden} id="delete" title="delete" type="submit" name="button" value="delete" form="bug_form">
+  </aside>
+  <footer>
+    <a href="https://github.com/">
+      <img id="git_logo" src="resources./github.png" width="50" height="50"/>
+    </a>
+  </footer>
+</body>
+
+</html>

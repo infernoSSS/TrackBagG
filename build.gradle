@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+    flatDir{
+        dirs 'D:\\EE\\apache-tomcat-9.0.54\\lib'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation files('D:\\EE\\apache-tomcat-9.0.54\\lib\\servlet-api.jar')
+    implementation 'mysql:mysql-connector-java:8.0.25'
+}
